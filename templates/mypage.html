@@ -43,36 +43,42 @@
       </div>
       <div class="col-md-6">
         <h4 class="mb-3">다가올 일정</h4>
-        {% for item in plans[1] %}
+        <!--{% for item in plans[1] %}-->
         <div class="list-group w-auto">
           <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <img src="https://cdn-icons-png.flaticon.com/512/6463/6463127.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
-                <h6 class="mb-0">{{item.title}}</h6>
-                <p class="mb-0 opacity-75">{{item.description}}</p>
+                <!--h6 class="mb-0">{{item.title}}</h6>
+                <p class="mb-0 opacity-75">{{item.description}}</p-->
+                <h6 class="mb-0">item.title</h6>
+                <p class="mb-0 opacity-75">item.description</p>
               </div>
-              <small class="opacity-50 text-nowrap">{{item.who}}</small>
+              <!--small class="opacity-50 text-nowrap">{{item.who}}</small-->
+              <small class="opacity-50 text-nowrap">item.who</small>
             </div>
           </a>
         </div>
-        {% endfor %}
+        <!--{% endfor %}-->
         <br>
         <h4 class="mb-3">완료된 일정</h4>
-        {% for item in plans[0] %}
+        <!--{% for item in plans[0] %}-->
         <div class="list-group w-auto">
           <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <img src="https://cdn-icons-png.flaticon.com/512/6463/6463127.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
-                <h6 class="mb-0">{{item.title}}</h6>
-                <p class="mb-0 opacity-75">{{item.description}}</p>
+                <!--h6 class="mb-0">{{item.title}}</h6>
+                <p class="mb-0 opacity-75">{{item.description}}</p-->
+                <h6 class="mb-0">item.title</h6>
+                <p class="mb-0 opacity-75">item.description</p>
               </div>
-              <small class="opacity-50 text-nowrap">{{item.who}}</small>
+              <!--small class="opacity-50 text-nowrap">{{item.who}}</small-->
+              <small class="opacity-50 text-nowrap">item.who</small>
             </div>
           </a>
         </div>
-        {% endfor %}
+        <!--{% endfor %}-->
       </div>
     </div>
   </div>
@@ -86,6 +92,8 @@
 
     const calendar = new Calendar(container, options)
 
+    // 함께 확인해야할 부분
+    /*
     fetch('./calender/data').then((data) => data.json())
     .then((data) => {
       const calendarData = data.plans.flat();
@@ -105,6 +113,7 @@
 
       calendar.createEvents(events)
     }); 
+    */
 
   </script>
 </body>
