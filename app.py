@@ -5,6 +5,7 @@ from flask import Flask, redirect, render_template, request, url_for, jsonify
 from datetime import date
 
 app = Flask(__name__)
+app.debug = True
 app.app_context().push()
 
 # 현재있는 파일의 디렉토리 절대경로
@@ -26,18 +27,16 @@ def hello_world():
 
 @app.route('/create', methods=['POST', 'GET'])
 def create_plan():
-    '''
-    if request.method == 'POST': 
+    if request.method == 'POST':
         plan = Plan(request.form['title'], request.form['description'], request.form['when'], request.form['who'], request.form['where'])
         db.session.add(plan)
         db.session.commit()
+        # redirect 함수로 api를 호출시킴
         return redirect(url_for('get_mypage'))
     return render_template("plan.html")
-    '''
 
 @app.route('/mypage')
 def get_mypage():
-    '''
     today_date = date.today().isoformat()
 
     plans = []
@@ -48,7 +47,6 @@ def get_mypage():
     plans.append(upcommingPlan)
 
     return render_template('mypage.html', plans = plans)
-    '''
 
 def dict_helper(objlist):
     result2 = [item.obj_to_dict() for item in objlist]
@@ -56,7 +54,6 @@ def dict_helper(objlist):
 
 @app.get('/calender/data')
 def get_calender_data():
-    '''
     today_date = date.today().isoformat()
 
     plans = []
@@ -69,7 +66,6 @@ def get_calender_data():
     plans.append(upcommingPlan_dict)
 
     return jsonify(plans=plans)
-    '''
 
 # DB 연결 부분
 db.init_app(app)

@@ -26,4 +26,4 @@ class Plan(db.Model):
         self.description = description
         self.when = when
         self.who = who
-        self.where = where        
+        self.where = where
